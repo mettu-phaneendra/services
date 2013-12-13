@@ -26,6 +26,7 @@ public class RemoteDeviceOptions {
 		this.udid = udid;
 		this.headerMap = Collections.unmodifiableMap(headerMap);
 	}
+	
 	public String getRemoteIP() {
 		return remoteIP;
 	}

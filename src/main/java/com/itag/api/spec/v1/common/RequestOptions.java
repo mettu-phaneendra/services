@@ -12,7 +12,17 @@ public class RequestOptions {
 	private String userAgent;
 	private final Version version;
 	private final Locale locale;
-
+	
+	public RequestOptions() {
+		this.baseUri = "baseUri";
+		this.metadata = false;
+		this.version = null;
+		this.locale = new Locale("en");
+        this.remoteDeviceOptions = null; 
+        this.userAgent = "userAgent";
+		this.secure = false;
+	}
+	
 	public RequestOptions(String baseUri, Version version, Locale locale,
 			RemoteDeviceOptions remoteDeviceOptions, String userAgent,
 			boolean metadata, boolean secure) {
