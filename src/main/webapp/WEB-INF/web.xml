@@ -6,18 +6,18 @@
     <display-name>itag services</display-name>  
   
     <servlet>  
-        <servlet-name>itag-controller</servlet-name>  
+        <servlet-name>itag-services</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
         <init-param>
         	<param-name>contextConfigLocation</param-name>  
-        	<param-value>/WEB-INF/itag-controller-servlet.xml</param-value>
+        	<param-value>/WEB-INF/itag-services-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>  
     </servlet>  
   
     <servlet-mapping>  
-        <servlet-name>itag-controller</servlet-name>  
-        <url-pattern>/itag-services/*</url-pattern>  
+        <servlet-name>itag-services</servlet-name>  
+        <url-pattern>/</url-pattern>
     </servlet-mapping>  
   
 <!--     <listener>   -->
