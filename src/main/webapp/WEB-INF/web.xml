@@ -5,13 +5,18 @@
 
 	<display-name>itag services</display-name>
 
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/itag-services-servlet.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>	
+	
 	<servlet>
 		<servlet-name>itag-services</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/itag-services-servlet.xml</param-value>
-		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -20,7 +25,4 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- <listener> -->
-	<!-- <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> -->
-	<!-- </listener> -->
 </web-app>  
