@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.itag.api.server.v1.user.biz.RegistrationModelHelper;
@@ -36,7 +37,8 @@ public class RegistrationController {
             final HttpServletResponse response, 
             final UserRegistrationForm register,
             final ModelMap model,
-            final RequestOptions requestOptions) {  
+            final RequestOptions requestOptions) {
+    	ServletWebRequest webRequest = new ServletWebRequest(request, response);
     	RegistrationProvider provider = regServiceProvider.register(register, requestOptions.getLocale());
     	
         return RegistrationModelHelper.initProviderToModel(response, model, provider, requestOptions);
