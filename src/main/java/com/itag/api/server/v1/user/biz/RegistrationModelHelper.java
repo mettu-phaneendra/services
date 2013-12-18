@@ -11,7 +11,9 @@ public class RegistrationModelHelper {
 
 	public static ModelMap initProviderToModel(HttpServletResponse response,
 			ModelMap model, RegistrationProvider provider, RequestOptions requestOptions) {
-		return null;
+		ModelMap ui = new ModelMap();
+		ui.put("reponse", response);		
+		return ui;
 	}
 
 }

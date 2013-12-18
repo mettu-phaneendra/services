@@ -1,29 +1,20 @@
 package com.itag.api.spec.v1.user.register;
 
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UserRegistration", propOrder = {
-		"email",
-		"passowrd-first",
-		"passowrd-verify",
-		"nick-name"
-})
-
+@XmlRootElement(name = "user_registration")
 public class UserRegistrationForm {
 	@XmlElement(name = "email")
 	protected String email;
 	
-	@XmlElement(name = "password-first")
+	@XmlElement(name = "password_first")
 	protected String passwordFirst;
 	
-	@XmlElement(name = "password-verify")
+	@XmlElement(name = "password_verify")
 	protected String passwordVerify;
 	
-	@XmlElement(name = "nick-name")
+	@XmlElement(name = "nick_name")
 	protected String nickName;
 
 	public String getEmail() {
