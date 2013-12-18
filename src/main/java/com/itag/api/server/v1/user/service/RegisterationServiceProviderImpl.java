@@ -5,7 +5,7 @@ import java.util.Locale;
 import org.springframework.stereotype.Service;
 
 import com.itag.api.server.v1.user.model.RegistrationProvider;
-import com.itag.api.spec.v1.user.register.UserRegistrationForm;
+import com.itag.api.spec.v1.user.register.Registration;
 
 @Service
 public class RegisterationServiceProviderImpl implements
@@ -16,7 +16,7 @@ public class RegisterationServiceProviderImpl implements
 	}
 
 	@Override
-	public RegistrationProvider register(UserRegistrationForm user,
+	public RegistrationProvider register(Registration user,
 			Locale locale) {
 		RegistrationProvider register = new RegistrationProvider();
 		register.setTestingService("testingService");

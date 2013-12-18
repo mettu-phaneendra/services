@@ -3,8 +3,8 @@ package com.itag.api.spec.v1.user.register;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "user_registration")
-public class UserRegistrationForm {
+@XmlRootElement(name = "registration")
+public class Registration {
 	@XmlElement(name = "email")
 	protected String email;
 	

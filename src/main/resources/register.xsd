@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	jaxb:extensionBindingPrefixes="xjc">
+
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:globalBindings>
+				<xjc:simple />
+			</jaxb:globalBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<xs:simpleType name="PasswordType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="6" />
+			<xs:maxLength value="12" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="Registration" />
+	<xs:complexType name="Registration">
+		<xs:attribute name="name" type="xs:string" />
+		<xs:attribute name="email" type="xs:string" />
+		<xs:attribute name="password_first" type="PasswordType" />
+		<xs:attribute name="password_verify" type="PasswordType" />
+	</xs:complexType>
+
+</xs:schema>
