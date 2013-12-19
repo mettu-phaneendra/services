@@ -31,7 +31,8 @@ public class RegistrationController {
 		return user;
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes="application/*")
+	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = {
+			"application/xml", "application/json" })
 	@ResponseBody
 	public Registration register(@RequestBody Registration registration,
 			@RequestHeader MultiValueMap<String, String> headers) {
