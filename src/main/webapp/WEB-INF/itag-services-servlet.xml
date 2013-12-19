@@ -12,21 +12,23 @@
 
 	<context:component-scan base-package="com.itag" />
 
-	<bean id="contentNegotiationManager"
-		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-		<property name="favorPathExtension" value="false" />
-		<property name="favorParameter" value="true" />
-		<property name="mediaTypes">
-			<map>
-				<entry key="html" value="text/html"></entry>
-				<entry key="json" value="application/json"></entry>
-				<entry key="xml" value="application/xml"></entry>
-			</map>
-		</property>
-	</bean>
+	<!-- <bean id="contentNegotiationManager" -->
+	<!-- class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"> -->
+	<!-- <property name="favorPathExtension" value="false" /> -->
+	<!-- <property name="favorParameter" value="true" /> -->
+	<!-- <property name="mediaTypes"> -->
+	<!-- <map> -->
+	<!-- <entry key="html" value="text/html"></entry> -->
+	<!-- <entry key="json" value="application/json"></entry> -->
+	<!-- <entry key="xml" value="application/xml"></entry> -->
+	<!-- </map> -->
+	<!-- </property> -->
+	<!-- </bean> -->
 
 	<!-- Configures the @Controller programming model -->
-	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager" />
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
+	<!-- content-negotiation-manager="contentNegotiationManager" /> -->
 
 	<!-- Default ViewResolver that allows JSPs to function -->
 	<bean id="viewResolver"
@@ -37,32 +39,43 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<bean
-		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<property name="viewResolvers">
-			<list>
-				<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-					<property name="viewClass"
-						value="org.springframework.web.servlet.view.JstlView"></property>
-					<property name="prefix" value="/WEB-INF/pages/"></property>
-					<property name="suffix" value=".jsp"></property>
-				</bean>
-			</list>
-		</property>
-	</bean>
+	<!-- <bean id="jaxb2Marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"> -->
+	<!-- <property name="classesToBeBound"> -->
+	<!-- <list> -->
+	<!-- <value>com.itag.api.server.v1.user.model.Registration</value> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!-- <property name="schema" value="classpath:com/itag/api/spec/v1/user/schema/register.xsd" 
+		/> -->
+	<!-- </bean> -->
 
-	<!-- <oxm:jaxb2-marshaller id="jaxbMarshallerBean"> -->
+	<!-- <bean -->
+	<!-- class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"> -->
+	<!-- <property name="viewResolvers"> -->
+	<!-- <list> -->
+	<!-- <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> -->
+	<!-- <property name="viewClass" -->
+	<!-- value="org.springframework.web.servlet.view.JstlView"></property> -->
+	<!-- <property name="prefix" value="/WEB-INF/pages/"></property> -->
+	<!-- <property name="suffix" value=".jsp"></property> -->
+	<!-- </bean> -->
+	<!-- </list> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+
+	<!-- <oxm:jaxb2-marshaller id="marshaller" -->
+	<!-- contextPath="org.springframework.ws.samples.airline.schema" /> -->
+
+	<!-- <oxm:jaxb2-marshaller id="marshaller"> -->
 	<!-- <oxm:class-to-be-bound -->
-	<!-- name="com.itag.api.spec.v1.user.register.Registration" /> -->
+	<!-- name="com.itag.api.server.v1.user.model.Registration" /> -->
 	<!-- </oxm:jaxb2-marshaller> -->
-
 
 	<!--Use JAXB OXM marshaller to marshall/unmarshall following class -->
 	<!-- <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller"> -->
 	<!-- <property name="contextPaths"> -->
 	<!-- <list> -->
-	<!-- <value>com.itag.api.spec.v1.user.register.UserRegistrationForm -->
-	<!-- </value> -->
+	<!-- <value>com.itag.api.server.v1.user.model.Registration</value> -->
 	<!-- </list> -->
 	<!-- </property> -->
 	<!-- </bean> -->

@@ -4,8 +4,8 @@ import java.util.Locale;
 
 import org.springframework.stereotype.Service;
 
+import com.itag.api.server.v1.user.model.Registration;
 import com.itag.api.server.v1.user.model.RegistrationProvider;
-import com.itag.api.spec.v1.user.register.Registration;
 
 @Service
 public class RegisterationServiceProviderImpl implements

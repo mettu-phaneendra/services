@@ -1,21 +1,10 @@
-package com.itag.api.spec.v1.user.register;
+package com.itag.api.server.v1.user.model;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name = "registration")
 public class Registration {
-	@XmlElement(name = "email")
+	protected String name;
 	protected String email;
-	
-	@XmlElement(name = "password_first")
 	protected String passwordFirst;
-	
-	@XmlElement(name = "password_verify")
 	protected String passwordVerify;
-	
-	@XmlElement(name = "nick_name")
-	protected String nickName;
 
 	public String getEmail() {
 		return email;
@@ -41,12 +30,12 @@ public class Registration {
 		this.passwordVerify = passwordVerify;
 	}
 
-	public String getNickName() {
-		return nickName;
+	public String getName() {
+		return name;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

@@ -53,22 +53,16 @@
 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-lgpl</artifactId>
-			<version>1.6.4</version>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.10</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-lgpl</artifactId>
-			<version>1.6.4</version>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.10</version>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-xc</artifactId>
-			<version>1.6.4</version>
-		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

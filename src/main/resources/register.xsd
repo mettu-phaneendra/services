@@ -19,12 +19,24 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:element name="Registration" />
-	<xs:complexType name="Registration">
-		<xs:attribute name="name" type="xs:string" />
-		<xs:attribute name="email" type="xs:string" />
-		<xs:attribute name="password_first" type="PasswordType" />
-		<xs:attribute name="password_verify" type="PasswordType" />
-	</xs:complexType>
+	<xs:element name="registration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string" />
+				<xs:element name="email" type="xs:string" />
+				<xs:element name="password_first" type="PasswordType" />
+				<xs:element name="password_verify" type="PasswordType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 
 </xs:schema>
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!-- <registration> -->
+<!-- <name>John Doe</name> -->
+<!-- <email>jdoe@example.com</email> -->
+<!-- <password_first>jdoe@example.com</password_first> -->
+<!-- <password_verify>jdoe@example.com</password_verify> -->
+<!-- </registration> -->
