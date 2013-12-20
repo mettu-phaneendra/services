@@ -26,6 +26,6 @@
 	</bean>
 
 	<bean id="regServiceProvider"
-		class="com.itag.api.server.v1.user.service.RegisterationServiceProviderImpl" />
+		class="com.itag.api.server.v1.register.service.RegisterationServiceProviderImpl" />
 
 </beans>

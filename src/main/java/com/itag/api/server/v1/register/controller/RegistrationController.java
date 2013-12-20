@@ -1,4 +1,4 @@
-package com.itag.services.register.controller;
+package com.itag.api.server.v1.register.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.itag.api.server.v1.user.model.Registration;
-import com.itag.api.server.v1.user.model.User;
-import com.itag.api.server.v1.user.service.RegisterationServiceProvider;
+import com.itag.api.server.v1.register.model.Registration;
+import com.itag.api.server.v1.register.model.User;
+import com.itag.api.server.v1.register.service.RegisterationServiceProvider;
 
 @Controller
 public class RegistrationController {
@@ -28,20 +28,20 @@ public class RegistrationController {
 		User user = new User();
 		user.setName("John Doe");
 		user.setEmail("jdoe@example.com");
+		
 		return user;
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = {
 			"application/xml", "application/json" })
 	@ResponseBody
-	public Registration register(@RequestBody Registration registration,
+	public User register(@RequestBody Registration register,
 			@RequestHeader MultiValueMap<String, String> headers) {
+		//		return regServiceProvider.register(register, headers);
 		User user = new User();
-		if (registration != null) {
-			user.setName(registration.getName());
-			user.setEmail(registration.getEmail());
-		}
-		return registration;
+		user.setName(register.getName());
+		user.setEmail(register.getEmail());
+		return user; 
 	}
 
 }

@@ -1,9 +1,9 @@
-package com.itag.api.server.v1.user.model;
+package com.itag.api.server.v1.register.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "registration")
-public class Registration {
+public class Registration extends BaseModel {
 	protected String name;
 	protected String email;
 	protected String password;

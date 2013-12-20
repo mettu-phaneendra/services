@@ -1,4 +1,4 @@
-package com.itag.api.server.v1.user.model;
+package com.itag.api.server.v1.register.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="user")
 @XmlAccessorType(XmlAccessType.NONE)
-public class User {
+public class User extends BaseModel {
  
     @XmlElement(name="name")
     private String name;

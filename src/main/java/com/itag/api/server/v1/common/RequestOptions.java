@@ -1,4 +1,4 @@
-package com.itag.api.spec.v1.common;
+package com.itag.api.server.v1.common;
 
 import java.util.Locale;
 import org.springframework.util.Assert;
