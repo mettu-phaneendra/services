@@ -5,6 +5,7 @@ import org.springframework.util.MultiValueMap;
 
 import com.itag.api.server.v1.register.biz.RegistrationBOF;
 import com.itag.api.server.v1.register.biz.RegistrationBOFImpl;
+import com.itag.api.server.v1.register.biz.RegistrationBo;
 import com.itag.api.server.v1.register.model.Registration;
 import com.itag.api.server.v1.register.model.User;
 
@@ -19,7 +20,7 @@ public class RegisterationServiceProviderImpl implements
 
 	@Override
 	public User register(Registration register, MultiValueMap<String, String> headers) {
-		registerBOF.register(registerBOF.mapModelToBo(register));
+		registerBOF.register(registerBOF.mapModelToBo(register, RegistrationBo.class));
 		return null;
 	}
 }

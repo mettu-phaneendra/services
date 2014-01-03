@@ -28,7 +28,7 @@ public class RegistrationController {
 		User user = new User();
 		user.setName("John Doe");
 		user.setEmail("jdoe@example.com");
-		
+
 		return user;
 	}
 
@@ -37,11 +37,7 @@ public class RegistrationController {
 	@ResponseBody
 	public User register(@RequestBody Registration register,
 			@RequestHeader MultiValueMap<String, String> headers) {
-		//		return regServiceProvider.register(register, headers);
-		User user = new User();
-		user.setName(register.getName());
-		user.setEmail(register.getEmail());
-		return user; 
+		return regServiceProvider.register(register, headers);
 	}
 
 }

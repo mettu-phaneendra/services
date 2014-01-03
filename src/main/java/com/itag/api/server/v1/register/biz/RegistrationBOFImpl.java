@@ -5,6 +5,7 @@ import com.itag.api.server.v1.register.dao.RegistrationDaoImpl;
 import com.itag.api.server.v1.register.dos.RegisterationDo;
 import com.itag.api.server.v1.register.dos.UserDo;
 import com.itag.api.server.v1.register.model.BaseModel;
+import com.itag.api.server.v1.register.model.Registration;
 
 public class RegistrationBOFImpl extends RegistrationBOF {
 	public RegistrationDao registerDao;
@@ -20,9 +21,8 @@ public class RegistrationBOFImpl extends RegistrationBOF {
 	}
 
 	@Override
-	public RegistrationBo mapModelToBo(BaseModel model) {
-		// TODO Auto-generated method stub
-		return null;
+	public <T> RegistrationBo mapModelToBo(BaseModel model, Class<T> toClass) {
+		return (RegistrationBo) RegistrationModelHelper.mapper((Registration)model, toClass);
 	}
 
 	@Override
